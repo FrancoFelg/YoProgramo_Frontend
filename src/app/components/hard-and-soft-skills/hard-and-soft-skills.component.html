@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div>
+    <button
+      type="button"
+      routerLink="/newskill"
+      class="btn btn-primary"
+      *ngIf="isLogged"
+    >
+      Nueva Skill
+    </button>
+  </div>
+
+  <div class="row">
+    <div
+      class="col-4 d-flex justify-content-center"
+      *ngFor="let skill of skill"
+    >
+      <circle-progress
+        [percent]="skill.porcentaje"
+        [radius]="100"
+        [outerStrokeWidth]="8"
+        [innerStrokeWidth]="5"
+        [showSubtitle]="true"
+        [title]="skill.nombre"
+        [imageSrc]="'../assets/html.png'"
+        [showImage]="true"
+        [imageHeight]="100"
+        [imageWidth]="100"
+        [outerStrokeColor]="'#78C000'"
+        [innerStrokeColor]="'#C7E596'"
+        [animation]="true"
+        [animationDuration]="300"
+      ></circle-progress>
+
+      <div>
+        <td *ngIf="isLogged">
+          <button class="btn btn-light" routerLink="/editskill/{{ skill.id }}">
+            <i class="bi bi-pencil-fill"></i>
+          </button>
+        </td>
+        <td *ngIf="isLogged">
+          <button class="btn btn-danger" (click)="delete(skill.id)">
+            <i class="bi bi-trash-fill"></i>
+          </button>
+        </td>
+      </div>
+    </div>
+  </div>
+</div>

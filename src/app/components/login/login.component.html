@@ -1,0 +1,44 @@
+<form #f="ngForm" (ngSubmit)="onLogin()" novalidate class="container">
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <input
+      type="email"
+      id="nombreUsuario"
+      name="nombreUsuario"
+      class="form-control"
+      [(ngModel)]="nombreUsuario"
+      required
+    />
+    <label class="form-label" for="form2Example1">Email address</label>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <input
+      type="password"
+      id="password"
+      name="password"
+      class="form-control"
+      [(ngModel)]="password"
+      required
+    />
+    <label class="form-label" for="form2Example2">Password</label>
+  </div>
+
+  <div class="col">
+    <!-- Simple link -->
+    <a href="#!">Forgot password?</a>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+  <!-- Register buttons -->
+  <div class="text-center">
+    <p>Not a member? <a href="#!">Register</a></p>
+    <p>or sign up with:</p>
+    <button type="button" class="btn btn-link btn-floating mx-1">
+      <i class="fab fa-facebook-f"></i>
+    </button>
+  </div>
+</form>
