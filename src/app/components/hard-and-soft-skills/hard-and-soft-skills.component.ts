@@ -18,9 +18,9 @@ export class HardAndSoftSkillsComponent implements OnInit{
 
   ngOnInit(): void {
     this.cargarSkills();
-    if(this.tokenService.getToken){
+    if(this.tokenService.getToken()){
       this.isLogged = true;
-    }else {
+    }else{
       this.isLogged = false;
     }
   }

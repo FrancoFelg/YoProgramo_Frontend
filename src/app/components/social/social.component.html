@@ -1,7 +1,26 @@
-<div class="p-3">
-  <a href=""> <img src="../../../assets/linkedin.png" id="linkedin" /> </a>
-  <a href=""> <img src="../../../assets/twitter.png" id="twitter" /> </a>
-  <a href=""> <img src="../../../assets/instagram.png" id="instagram" /> </a>
-  <a href=""> <img src="../../../assets/github.png" id="github" /> </a>
-  <a href=""> <img src="../../../assets/facebook.png" id="facebook" /> </a>
+<div class="pt-3">
+  <a href="https://www.linkedin.com/in/franco-lamberti/">
+    <img src="../../../assets/linkedin.png" id="linkedin" />
+  </a>
+  <a href="https://www.instagram.com/franco._lamberti/">
+    <img src="../../../assets/instagram.png" id="instagram" />
+  </a>
+  <a href="https://github.com/FrancoFelg">
+    <img src="../../../assets/github.png" id="github" />
+  </a>
+
+  <a
+    href="/login"
+    (click)="login()"
+    *ngIf="!isLogged"
+    class="mx-3 btn btn-outline-primary"
+    >Ingresar</a
+  >
+  <a
+    href="/login"
+    (click)="onLogOut()"
+    *ngIf="isLogged"
+    class="mx-3 btn btn-outline-primary"
+    >Cerrar sesión</a
+  >
 </div>

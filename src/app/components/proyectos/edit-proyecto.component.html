@@ -1,0 +1,27 @@
+<div class="container" *ngIf="proyecto">
+  <div class="row">
+    <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+      <div class="form-group">
+        <label for="nombre">Nombre del proyecto</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          name="nombre"
+          [(ngModel)]="proyecto.nombre"
+          required=""
+        />
+        <label for="descripcion">Porcentaje del proyecto</label>
+        <input
+          type="text"
+          class="form-control"
+          id="descripcion"
+          name="descripcion"
+          [(ngModel)]="proyecto.descripcion"
+          required=""
+        />
+        <button class="btn btn-primary" type="submit">Actualizar</button>
+      </div>
+    </form>
+  </div>
+</div>

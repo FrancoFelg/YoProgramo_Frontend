@@ -1,33 +1,33 @@
 <div class="row">
   <h2>Proyectos realizados</h2>
+  <button
+    type="button"
+    class="btn btn-primary"
+    routerLink="/newproyecto"
+    *ngIf="isLogged"
+  >
+    Nuevo proyecto
+  </button>
   <div class="contenedor">
     <div>
-      <div class="col-12">
-        <h3>Proyecto 1</h3>
+      <div class="col-12" *ngFor="let proyecto of proyectos">
+        <h3>{{ proyecto.nombre }}</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-          accusantium officiis voluptates assumenda reiciendis nostrum, minus
-          fuga aperiam rem odit earum dolorum officia voluptatem consequatur
-          placeat sint corporis! Omnis, earum!
+          {{ proyecto.descripcion }}
         </p>
-      </div>
-      <div class="col-12">
-        <h3>Proyecto 1</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-          accusantium officiis voluptates assumenda reiciendis nostrum, minus
-          fuga aperiam rem odit earum dolorum officia voluptatem consequatur
-          placeat sint corporis! Omnis, earum!
-        </p>
-      </div>
-      <div class="col-12">
-        <h3>Proyecto 1</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-          accusantium officiis voluptates assumenda reiciendis nostrum, minus
-          fuga aperiam rem odit earum dolorum officia voluptatem consequatur
-          placeat sint corporis! Omnis, earum!
-        </p>
+        <td *ngIf="isLogged">
+          <button
+            class="btn btn-info"
+            routerLink="/editproyecto/{{ proyecto.id }}"
+          >
+            Editar <i class="bi bi-pencil-fill"></i>
+          </button>
+        </td>
+        <td *ngIf="isLogged">
+          <button class="btn btn-danger" (click)="delete(proyecto.id)">
+            Borrar <i class="bi bi-trash-fill"></i>
+          </button>
+        </td>
       </div>
     </div>
   </div>
