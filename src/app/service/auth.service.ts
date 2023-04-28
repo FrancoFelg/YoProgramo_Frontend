@@ -9,7 +9,7 @@ import { NuevoUsuario } from '../model/nuevo-usuario';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = "http://localhost:8080/auth/";
+  authURL = "https://portfolio-backend3-zl0m.onrender.com/auth/";//http://localhost:8080/
 
   constructor(private httpClient:HttpClient) {}
 
